@@ -4,6 +4,7 @@ const reverseString = require("./reverseString");
 const getCharactersCount = require("./getcharaterscount");
 const formatDate = require("./formatdate");
 const validatePassword = require("./validatepassword");
+const maskCardNumber = require("./maskcard");
 
 test("adds 1 + 2 to equal 3", () => {
   expect(sum(1, 2)).toBe(3);
@@ -29,4 +30,8 @@ test("format the date '2024-06-01'", () => {
 test("validate a strong password", () => {
   expect(validatePassword("StrongP@ssw0rd")).toBe(true);
   expect(validatePassword("weakpassword")).toBe(false);
+});
+
+test("mask a credit card number", () => {
+  expect(maskCardNumber("1234 5678 9012 3456")).toBe("************3456");
 });
