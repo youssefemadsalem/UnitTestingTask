@@ -5,6 +5,7 @@ const getCharactersCount = require("./getcharaterscount");
 const formatDate = require("./formatdate");
 const validatePassword = require("./validatepassword");
 const maskCardNumber = require("./maskcard");
+const range = require("./range");
 
 test("adds 1 + 2 to equal 3", () => {
   expect(sum(1, 2)).toBe(3);
@@ -34,4 +35,12 @@ test("validate a strong password", () => {
 
 test("mask a credit card number", () => {
   expect(maskCardNumber("1234 5678 9012 3456")).toBe("************3456");
+});
+
+test("generate a range of numbers", () => {
+  const result = [];
+  for (const num of range(0, 5)) {
+    result.push(num);
+  }
+  expect(result).toEqual([0, 1, 2, 3, 4]);
 });
